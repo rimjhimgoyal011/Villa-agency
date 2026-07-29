@@ -10,3 +10,22 @@ function moveslide(direction) {
     behavior: 'smooth'
   });
 }     
+document.addEventListener("DOMContentLoaded", () => {
+    const headers = document.querySelectorAll(".accordion-header");
+
+    headers.forEach(header => {
+        header.addEventListener("click", () => {
+            const currentItem = header.parentElement;
+            
+            // Optional: Close other open accordion elements if clicking a new one
+            document.querySelectorAll(".accordion-item").forEach(item => {
+                if (item !== currentItem) {
+                    item.classList.remove("active");
+                }
+            });
+
+            // Toggle active visibility state flag rule parameters
+            currentItem.classList.toggle("active");
+        });
+    });
+});
