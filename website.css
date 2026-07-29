@@ -7,7 +7,76 @@ body {
 html {
     scrollbar-color: white transparent;
 }
- 
+ img {
+    max-width: 100%;
+    height: auto;
+}
+ /* Fix for mobile screens */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Fix the top contacts bar (info@company.com and address) */
+  .nav-bar {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-right {
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  /* 2. Fix the navigation links menu */
+  .nav-menu .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    gap: 15px;
+  }
+
+  /* 3. Stack the main layout columns vertically */
+  .featured-container,
+  .main-home-content {
+    display: flex;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 0 15px !important;
+    box-sizing: border-box;
+  }
+
+  /* 4. Force all inner feature boxes to full width */
+  .featured-image-box,
+  .featured-text-box,
+  .featured-info-sidebar,
+  .\=left-home-content, /* Matches the typo class in your HTML */
+  .contact-form-column {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  /* 5. Make the embedded Google map responsive */
+  .index-google-map iframe {
+    width: 100% !important;
+    height: 300px !important;
+  }
+}
 .nav-bar {
     margin-top: 12px;
     display: flex;
