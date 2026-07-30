@@ -1,15 +1,20 @@
-const slider = document.getElementById('slider');
+document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.getElementById('slider');
 
-function moveslide(direction) {
-  // Get width of a single slide item
-  const slideWidth = slider.clientWidth;
-  
-  // Scroll left or right based on direction clicked (-1 or 1)
-  slider.scrollBy({
-    left: direction * slideWidth,
-    behavior: 'smooth'
-  });
-}     
+    function moveslide(direction) {
+        // Safe check: stops the code from crashing if a page doesn't have a slider
+        if (!slider) return; 
+        
+        const slidewidth = slider.clientWidth;
+        slider.scrollBy({
+            left: direction * slidewidth,
+            behavior: 'smooth'
+        });
+    }
+
+    // Makes sure your HTML slider arrow buttons can still call the function
+    window.moveslide = moveslide;
+}); 
 document.addEventListener("DOMContentLoaded", () => {
     const headers = document.querySelectorAll(".accordion-header");
 
