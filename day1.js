@@ -34,3 +34,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // Finds buttons from BOTH index.html and property-details.html
+  const headers = document.querySelectorAll(".acc-toggle, .accordion-header");
+
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      // Finds the closest wrapper card regardless of which page you are on
+      const currentItem = header.closest(".acc-item, .accordion-item");
+
+      // Closes other open accordion items on the current page
+      const siblingItems = currentItem.parentElement.querySelectorAll(".acc-item, .accordion-item");
+      siblingItems.forEach(item => {
+        if (item !== currentItem) {
+          item.classList.remove("active");
+        }
+      });
+
+      // Toggles the active visibility state cleanly on click
+      currentItem.classList.toggle("active");
+    });
+  });
+});
