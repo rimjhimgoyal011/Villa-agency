@@ -11,14 +11,11 @@ img, video  {
     max-width: 100%;
     height: auto;
 }
-/* ==========================================================================
-   1. TABLET LAYOUT (Screens up to 1024px wide - iPads, Tablets, Small Laptops)
-   ========================================================================== */
+
 @media (max-width: 1024px) {
-  /* Reduce large desktop margins slightly so elements don't get squished */
   .nav-left {
     margin-left: 20px !important;
-    gap: 30px; /* Shrinks the large 50px desktop gap */
+    gap: 30px; 
   }
 
   .nav-right {
@@ -31,30 +28,23 @@ img, video  {
 
   .pages ul {
     margin-right: 20px !important;
-    gap: 30px; /* Brings menu links closer together */
+    gap: 30px;
   }
 
-  /* Scale down slider text slightly for tablet screens */
   .slide-text {
     font-size: 2rem !important; 
     left: 8% !important;
   }
 }
 
-/* ==========================================================================
-   2. MOBILE PHONE LAYOUT (Screens up to 768px wide - iPhone, Galaxy, Pixel)
-   ========================================================================== */
 @media (max-width: 768px) {
   
-  /* Top info bar layouts: stack vertically */
   .nav-bar {
     flex-direction: column;
     align-items: center;
     gap: 12px;
     padding: 10px 0;
   }
-
-  /* Top Left Info (Email, Address) */
   .nav-left {
     margin-left: 0 !important; 
     gap: 15px; 
@@ -69,20 +59,16 @@ img, video  {
     gap: 15px;
   }
 
-  /* Un-fixes header so it doesn't take up too much vertical screen space */
   header {
     position: static !important; 
   }
 
-  /* Logo & Main Menu Container */
   .text {
     flex-direction: column;
     margin-left: 0 !important;
     gap: 15px;
     text-align: center;
   }
-
-  /* Main Navigation Links List */
   .pages ul {
     flex-direction: column; 
     margin-right: 0 !important;
@@ -98,35 +84,26 @@ img, video  {
     justify-content: center;   
     font-size: 14px;            
   }
-
-  /* Slider Overlay Text Scaling */
   .slide-text {
-    left: 5% !important;         /* Centers the text box horizontally */
-    width: 90% !important;       /* Prevents text clipping on screen bounds */
-    max-width: 100% !important;  /* Overrides desktop 400px constraint */
-    font-size: 1.4rem !important;/* Scales text down smoothly for vertical viewing */
+    left: 5% !important;       
+    width: 90% !important;    
+    max-width: 100% !important; 
+    font-size: 1.4rem !important;
     text-align: center;
   }
-
-  /* Slider Navigation Arrow Buttons */
   .nav-btn {
-    padding: 10px !important;    /* Shrinks arrow pads so they don't cover text */
+    padding: 10px !important;  
     font-size: 14px !important;  
   }
   .prev-btn { left: 10px !important; }
   .next-btn { right: 10px !important; }
 }
 
-/* ==========================================================================
-   3. SMALL MOBILE LAYOUT (Screens up to 480px wide - Smaller/Older Phones)
-   ========================================================================== */
 @media (max-width: 480px) {
-  /* Extra downsizing for tight, narrow phone screen widths */
   .slide-text {
     font-size: 1.2rem !important;
   }
   
-  /* Shrink text sizing down slightly on tiny phone viewports */
   .nav-bar {
     font-size: 11px !important;
   }
@@ -258,7 +235,6 @@ a {
   overflow: hidden;
 }
 
-/* Swiper Wrapper with Native Touch Scroll Snap */
 .slider {
   display: flex;
   overflow-x: auto;
@@ -268,10 +244,9 @@ a {
 }
 
 .slider::-webkit-scrollbar {
-  display: none; /* Hide scrollbar Chrome/Safari */
+  display: none;
 }
 
-/* Individual Slide */
 .slide {
   flex: 0 0 100%;
   width: 100%;
@@ -284,7 +259,6 @@ a {
   display: block;
 }
 
-/* Overlay Text Styling */
 .slide-text {
   position: absolute;
   top: 50%;
@@ -314,11 +288,6 @@ a {
 
 /* properties-page css */
 
-/* ==========================================================================
-   COMPLETE MASTER MEDIA QUERIES FOR THE PROPERTIES PAGE
-   ========================================================================== */
-
-/* 1. TABLET LAYOUT ADJUSTMENTS (Screens up to 1024px wide) */
 @media (max-width: 1024px) {
   /* Banner adjustments */
   .heading-content {
@@ -335,17 +304,14 @@ a {
     padding: 30px 20px !important;
   }
   
-  /* 🏢 Drops property grid listings from 3 columns to 2 columns on tablets */
   .whole-details {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 20px !important;
   }
 }
 
-/* 2. MOBILE PHONE LAYOUT ADJUSTMENTS (Screens up to 768px wide) */
 @media (max-width: 768px) {
-  
-  /* Navigation header resets */
+
   .nav-bar {
     flex-direction: column !important;
     align-items: center !important;
@@ -364,7 +330,7 @@ a {
     gap: 15px !important;
   }
   header {
-    position: static !important; /* Un-fixes header to preserve mobile screen real estate */
+    position: static !important;
   }
   .text {
     flex-direction: column !important;
@@ -386,15 +352,16 @@ a {
     font-size: 14px !important;            
   }
 
-  /* Page Sub-Heading Banner Settings */
   .page-heading {
     width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
   .heading-content {
-    height: 220px !important;
-    margin-top: 20px !important;
+    height: auto !important;
+    min-height: 180px !important;
+    margin-top: 60px !important;
+    padding: 20px 0 !important;
   }
   .main-title {
     font-size: 26px !important;
@@ -406,7 +373,6 @@ a {
     margin-bottom: 10px !important;
   }
 
-  /* Main Sections Container Resets */
   .properties-section .container {
     flex-direction: column !important;
     align-items: center !important;
@@ -424,26 +390,23 @@ a {
     padding: 40px 0px !important; 
   }
 
-  /* 📱 PROPERTY GRID TO LIST VERTICAL OVERHAUL */
   .whole-details {
-    grid-template-columns: 1fr !important; /* Forces property cards into 1 column lane */
+    grid-template-columns: 1fr !important;
     gap: 25px !important;
     width: 100% !important;
   }
   .property-card {
-    padding: 15px !important; /* Downsizes internal card space to expand reading space */
+    padding: 15px !important;
   }
   .img-box img {
-    height: 200px !important; /* Compact photo scaling rule for mobile viewports */
+    height: 200px !important; 
   }
-  
-  /* Flex wrap protection for layout price rows */
+ 
   .tag-row {
     gap: 10px !important;
-    flex-wrap: wrap !important; /* Prevents category badge and price text from overlapping */
+    flex-wrap: wrap !important; 
   }
 
-  /* 🔘 FULL-WIDTH PROPERTY CARD BUTTONS */
   .main-button {
     width: 100% !important;
     display: block !important;
@@ -451,21 +414,19 @@ a {
   .main-button a {
     display: flex !important;
     width: 100% !important;
-    justify-content: center !important; /* Centers button text perfectly */
-    padding: 12px 0px !important;       /* Large, tap-friendly touch target layout */
+    justify-content: center !important;
+    padding: 12px 0px !important;      
     box-sizing: border-box !important;
   }
 
-  /* 🔢 RESPONSIVE PAGINATION ADJUSTMENTS */
   .pagination {
-    margin-top: 25px !important;   /* Shrinks the desktop 50px whitespace gap */
+    margin-top: 25px !important;   
   }
   .pagination ul {
-    gap: 6px !important;           /* Brings list item page bubbles closer together */
+    gap: 6px !important;           
   }
 }
 
-/* 3. EXTRA SMALL MOBILE ADJUSTMENTS (Screens up to 480px wide) */
 @media (max-width: 480px) {
   .heading-content {
     height: 180px !important;
@@ -491,7 +452,6 @@ a {
     margin-top: 120px;
 }
 
-/* 2. Banner image behavior */
 .banner-img {
     width: 100%;
     height: 100%;
@@ -499,7 +459,6 @@ a {
     display: block;
 }
 
-/* 3. Absolute positioning layer */
 .banner-text {
     position: absolute;    
     top: 50%;              
@@ -510,7 +469,6 @@ a {
     z-index: 10;          
 }
 
-/* 4. White breadcrumb wrapper box */
 .breadcrumb {
     display: inline-block;
     background-color: #ffffff;
@@ -527,7 +485,6 @@ a {
     text-decoration: none;
 }
 
-/* 5. Main Title Heading */
 .main-title {
     color: #ffffff;
     font-size: 45px;
@@ -558,9 +515,8 @@ a {
 
     color: orangered;
 }
-/* 1. Base Section Container with Background Image */
 #Home {
-    background-image: url('../images/blurbackgrnd.jpg'); /* The large background image */
+    background-image: url('../images/blurbackgrnd.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -581,7 +537,6 @@ a {
     padding: 0 15px;
 }
 
-/* Left Image Box Design */
 .featured-image-box {
     position: relative;
 }
@@ -604,7 +559,6 @@ a {
     align-items: center;
 }
 
-/* Middle Text & Typography Settings */
 .section-tag {
     color: #ee626b;
     font-size: 15px;
@@ -622,7 +576,6 @@ a {
     margin-bottom: 40px;
 }
 
-/* Accordion Component Design */
 .custom-accordion {
     background-color: #fafafa;
     border-radius: 20px;
@@ -671,7 +624,6 @@ a {
     line-height: 24px;
 }
 
-/* Right Metric Cards Layout */
 .featured-info-sidebar {
     background-color: #fff;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
@@ -719,8 +671,6 @@ a {
     }
 }
 
-
-/* 2. Horizontal Two-Column Split */
 .main-home-content {
     display: flex;
     justify-content: space-between;
@@ -728,17 +678,15 @@ a {
     max-width: 1200px;
     margin-top: -10px;
     padding: 0 20px;
-    gap: 40px; /* Space between the left elements and right form */
+    gap: 40px;
 }
 
-/* 3. Left Side Content Column Wrapper */
 .div.left-img {
-    flex: 1; /* Takes up 50% width */
+    flex: 1; 
     display: flex;
     flex-direction: column;
 }
 
-/* Text Header Layout Fix */
 .section-subtitle {
     margin-bottom: 50px;
 }
@@ -752,10 +700,9 @@ a {
 }
 
 .section-subtitle b {
-    color: #f35525; /* Orange accent text */
+    color: #f35525;
 }
 
-/* Map Sizing */
 .left-img iframe {
     width: 100%;
     height: 400px;
@@ -764,7 +711,6 @@ a {
     margin-bottom: 30px;
 }
 
-/* White Phone/Email Floating Boxes */
 .info-block-item {
     display: flex;
     align-items: center;
@@ -781,16 +727,14 @@ a {
     margin-right: 25px;
 }
 
-/* 4. Right Side Floating Form Column */
 .contact-form-column {
-    flex: 1; /* Takes up the other 50% width */
+    flex: 1;
     background-color: #fff;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
 }
 
-/* Form Inner Inputs Styling */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -818,7 +762,6 @@ a {
     resize: none;
 }
 
-/* Orange/Black Button Styling */
 .submit-btn {
     background-color: #1e1e1e;
     color: #fff;
@@ -846,14 +789,12 @@ a {
     padding: 0 15px;
 }
 
-/* 3-Column Grid Row Layout */
 .whole-details {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-/* Individual Property Cards */
 .property-card {
     background-color: #fff;
     border-radius: 12px;
@@ -871,7 +812,6 @@ a {
     display: block;
 }
 
-/* Label and Price Alignments */
 .tag-row {
     display: flex;
     justify-content: space-between;
@@ -902,7 +842,6 @@ a {
     line-height: 1.4;
 }
 
-/* Specifications Table List */
 .property-card ul {
     list-style: none;
     border-top: 1px solid #eee;
@@ -923,10 +862,9 @@ a {
     font-weight: 600;
 }
 
-/* Card Button Settings */
 .main-button {
     text-align: center;
-    margin-top: auto; /* Aligns card buttons evenly across the row */
+    margin-top: auto; 
 }
 
 .main-button a {
@@ -945,7 +883,6 @@ a {
     background-color: #f35525;
 }
 
-/* Footer Section Styling */
 .foot-container {
     background-color: #1e1e1e;
     padding: 30px 0;
@@ -968,7 +905,6 @@ a {
     color: #f35525;
 }
 
-/* Responsive Rule Layout Changes */
 @media (max-width: 992px) {
     .whole-details {
         grid-template-columns: repeat(2, 1fr);
@@ -993,7 +929,6 @@ a {
     gap: 10px;
 }
 
-/* Round Circular Buttons Layout */
 .pagination ul li a {
     display: flex;
     align-items: center;
@@ -1009,17 +944,13 @@ a {
     transition: background-color 0.3s ease;
 }
 
-/* Hover and Highlight Accent Classes */
 .pagination ul li a:hover,
 .pagination ul li a.active {
     background-color: #f35525;
     color: #fff;
 }
-/* ==========================================================================
-   MASTER CSS OVERRIDE BLOCK FOR MOBILE VIEW
-   ========================================================================== */
+
 @media (max-width: 768px) {
-  /* Forces the home parent frame wrapper to stack elements downward natively */
   .main-home-content {
     display: flex !important;
     flex-direction: column !important;
@@ -1027,7 +958,6 @@ a {
     gap: 45px !important; 
   }
 
-  /* Stretches the children elements to take up full mobile width layout edges */
   .left-home-content, 
   .contact-form-column,
   #contact-form {
@@ -1037,14 +967,12 @@ a {
     padding: 0 !important;
   }
 
-  /* Spaces layout inputs apart cleanly */
   .form-group {
     margin-bottom: 22px !important;
     display: flex !important;
     flex-direction: column !important;
   }
 
-  /* Keeps field margins inside screen frame bounds without stretching */
   .form-group input,
   .form-group textarea {
     width: 100% !important;
@@ -1052,20 +980,27 @@ a {
     box-sizing: border-box !important;
   }
 
-  /* Pulls the orange message submit button away from your footer panels */
   .submit-btn {
     margin-top: 20px !important;
     width: 100% !important;
     padding: 14px !important;
     display: block !important;
   }
+  .google-map {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 25px !important;
+    padding: 0 10px !important;
+  }
+  .google-map iframe {
+    width: 100% !important;
+    height: 280px !important;
+    border-radius: 12px !important;
+  }
 }
-/* property-details-page css*/
-/* ==========================================================================
-   MASTER MEDIA QUERIES FOR THE PROPERTY DETAILS PAGE
-   ========================================================================== */
 
-/* 1. TABLET LAYOUT ADJUSTMENTS (Screens up to 1024px wide - iPads/Tablets) */
+/* property-details-page css*/
+
 @media (max-width: 1024px) {
   .propheading-content {
     height: 280px !important;
@@ -1098,10 +1033,8 @@ a {
   }
 }
 
-/* 2. MOBILE PHONE LAYOUT ADJUSTMENTS (Screens up to 768px wide - Smartphones) */
 @media (max-width: 768px) {
   
-  /* Top menu row structural resets */
   .nav-bar {
     flex-direction: column !important;
     align-items: center !important;
@@ -1120,7 +1053,7 @@ a {
     gap: 15px !important;
   }
   header {
-    position: static !important; /* Un-fixes header elements to preserve phone scrolling space */
+    position: static !important;
   }
   .text {
     flex-direction: column !important;
@@ -1141,8 +1074,6 @@ a {
     justify-content: center !important;   
     font-size: 14px !important;            
   }
-
-  /* Page Sub-Heading Banner Settings */
   .proppage-heading {
     width: 100% !important;
     margin-left: 0 !important;
@@ -1158,9 +1089,8 @@ a {
     margin-bottom: 10px !important;
   }
 
-  /* 🥞 Two-Column Main Details Panel Stacking */
   .about-apparment {
-    flex-direction: column !important; /* Arranges main content and sidebar vertically */
+    flex-direction: column !important; 
     align-items: center !important;    
     gap: 30px !important;              
     margin: 30px auto !important;      
@@ -1168,7 +1098,7 @@ a {
   }
   .left-details,
   .right-info-grid {
-    width: 100% !important;            /* Lets grids scale to fill full mobile boundary width */
+    width: 100% !important;          
     max-width: 100% !important;
     flex: none !important;             
   }
@@ -1176,7 +1106,7 @@ a {
     margin-bottom: 15px !important;    
   }
 
-  /* Sidebar Card Resets */
+
   .right-info-grid {
     padding: 15px 0 !important;        
   }
@@ -1192,7 +1122,6 @@ a {
     font-size: 16px !important;        
   }
 
-  /* 🗂️ FAQ Accordion Sizing Adjustments */
   .faq-accordion {
     width: 100% !important;
     padding: 0 5px !important;
@@ -1202,15 +1131,14 @@ a {
     margin-bottom: 12px !important;
   }
   .accordion-header {
-    padding: 14px 20px !important;     /* Shrinks the desktop padding to expand text space */
+    padding: 14px 20px !important;    
     font-size: 15px !important;        
   }
   .accordion-body {
-    padding: 0 20px 18px 20px !important; /* Reclaims horizontal typing width */
+    padding: 0 20px 18px 20px !important;
     font-size: 14px !important;
   }
 
-  /* Best Deal Layout Frame Modules Resets */
   .best-deal-section { 
     padding: 40px 0 !important; 
   }
@@ -1228,7 +1156,7 @@ a {
     font-size: 24px !important; 
   }
   .deal-tabs {
-    flex-wrap: wrap !important;        /* Lets tabs wrap cleanly to a new row if cramped */
+    flex-wrap: wrap !important;      
     justify-content: center !important;
     gap: 10px !important;              
     width: 100% !important;
@@ -1240,7 +1168,6 @@ a {
     text-align: center !important;
   }
 
-  /* Best Deal Grid Elements to Vertical Column Stack */
   .deal-content-grid {
     flex-direction: column !important; 
     align-items: center !important;    
@@ -1275,22 +1202,19 @@ a {
     margin-bottom: 20px !important;
   }
 
-  /* 🔘 Symmetric Action Button Centering */
+
   .deal-visit-btn {
     display: inline-flex !important;
-    margin: 15px auto 0 auto !important; /* Automatically centers button under text blocks */
-    padding: 6px 24px 6px 24px !important; /* Balances out padding gaps uniformly */
+    margin: 15px auto 0 auto !important; 
+    padding: 6px 24px 6px 24px !important; 
     justify-content: center !important;
     align-items: center !important;
   }
-
-  /* Global Section Footer spacing control */
   .foot-container {
     margin-top: 30px !important;       
   }
 }
 
-/* 3. EXTRA SMALL MOBILE ADJUSTMENTS (Screens up to 480px wide) */
 @media (max-width: 480px) {
   .propheading-content {
     height: 180px !important;
@@ -1369,9 +1293,8 @@ a {
     align-items: flex-start;
 }
 
-/* Allocation settings for left side main info */
 .left-details {
-    flex: 2; /* Occupies roughly 65% width area */
+    flex: 2;
 }
 
 .left-details img {
@@ -1391,16 +1314,14 @@ a {
     margin-bottom: 15px;
 }
 
-/* Layout settings for right column cards */
 .right-info-grid {
-    flex: 1; /* Occupies remaining 35% width area */
+    flex: 1; 
     background: #ffffff;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
     padding: 10px 0;
 }
 
-/* Structural styling inside individual item card rows */
 .info-card {
     display: flex;
     align-items: center;
@@ -1410,7 +1331,7 @@ a {
 }
 
 .info-card:last-child {
-    border-bottom: none; /* Removes the bottom border line on the final row card item */
+    border-bottom: none;
 }
 
 .info-card img {
@@ -1432,7 +1353,6 @@ a {
     margin: 0;
 }
 
-/* Footer layout text row centering properties */
 .foot-container {
     text-align: center;
     padding: 30px 0;
@@ -1447,16 +1367,14 @@ a {
     width: 100%;
 }
 
-/* Accordion Element Borders & Background Profiles */
 .accordion-item {
     background-color: #fafafa;
-    border-radius: 20px; /* Gives the distinctive curved edge of the original site */
+    border-radius: 20px; 
     border: none;
     margin-bottom: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.03);
 }
 
-/* Header Trigger Configurations */
 .accordion-header {
     width: 100%;
     background: none;
@@ -1468,29 +1386,27 @@ a {
     font-weight: 600;
     color: #1e1e1e;
     cursor: pointer;
-    border-bottom: 1px solid #f0f0f0; /* Distinct thin border beneath headers */
+    border-bottom: 1px solid #f0f0f0; 
     transition: all 0.3s ease;
 }
 
-/* Active Highlight Accent State Styling Overrides */
 .accordion-item.active {
     background-color: #ffffff;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .accordion-item.active .accordion-header {
-    color: #f35525; /* Template Accent Orange */
-    border-bottom-color: transparent; /* Seamless interior blend when active */
+    color: #f35525; 
+    border-bottom-color: transparent; 
 }
 
-/* Body Content Inner Wrapper Properties */
 .accordion-body {
     padding: 0 30px 25px 30px;
-    display: none; /* Collapsed state target constraint flag */
+    display: none; 
 }
 
 .accordion-item.active .accordion-body {
-    display: block; /* Disables display restriction on active flag element link */
+    display: block;
 }
 
 .accordion-body p {
@@ -1515,7 +1431,6 @@ a {
     padding: 0 20px;
 }
 
-/* Header row layout formatting logic split */
 .deal-header {
     display: flex;
     justify-content: space-between;
@@ -1538,8 +1453,6 @@ a {
     color: #1e1e1e;
     margin: 0;
 }
-
-/* Nav Menu Buttons Tab Deck layout alignment */
 .deal-tabs {
     display: flex;
     gap: 15px;
@@ -1562,14 +1475,12 @@ a {
     background-color: #f35525;
 }
 
-/* Main Grid content allocation framework columns split */
 .deal-content-grid {
     display: flex;
     gap: 40px;
     align-items: flex-start;
 }
 
-/* 1. Spec table left style lists */
 .spec-table-panel {
     flex: 1;
     background-color: #ffffff;
@@ -1608,7 +1519,6 @@ a {
     color: #f35525;
 }
 
-/* 2. Middle display graphic canvas wrapper settings */
 .deal-media-panel {
     flex: 1.5;
 }
@@ -1621,7 +1531,6 @@ a {
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* 3. Narrative Right Panel and Callout Action link items */
 .deal-info-panel {
     flex: 1.2;
 }
@@ -1640,7 +1549,6 @@ a {
     margin-bottom: 20px;
 }
 
-/* Bottom visit scheduler buttons configuration layout */
 .deal-visit-btn {
     display: inline-flex;
     align-items: center;
@@ -1679,7 +1587,6 @@ a {
     color: #ffffff;
 }
 
-/* Responsive Adaptive Viewport Collapse Layout changes */
 @media (max-width: 992px) {
     .deal-header {
         flex-direction: column;
@@ -1695,11 +1602,7 @@ a {
 }
 
 /* contact-page css*/
-/* ==========================================================================
-   COMPLETE MASTER MEDIA QUERIES FOR THE CONTACT PAGE
-   ========================================================================== */
 
-/* 1. TABLET LAYOUT ADJUSTMENTS (Screens up to 1024px wide) */
 @media (max-width: 1024px) {
   /* Banner adjustments */
   .conheading-content {
@@ -1707,7 +1610,7 @@ a {
     margin-top: 80px !important;
   }
 
-  /* Structural wrapper reductions */
+
   .contact-layout-box {
     margin: 50px auto !important;
     gap: 30px !important;
@@ -1716,7 +1619,6 @@ a {
     flex: 1.1 !important;
   }
 
-  /* Tablet map sizing */
   .google-map iframe {
     height: 400px !important;
     margin-left: 5% !important;
@@ -1724,10 +1626,8 @@ a {
   }
 }
 
-/* 2. MOBILE PHONE LAYOUT ADJUSTMENTS (Screens up to 768px wide) */
 @media (max-width: 768px) {
   
-  /* Top menu row structural resets */
   .nav-bar {
     flex-direction: column !important;
     align-items: center !important;
@@ -1746,7 +1646,7 @@ a {
     gap: 15px !important;
   }
   header {
-    position: static !important; /* Un-fixes header elements to preserve phone scrolling space */
+    position: static !important; 
   }
   .text {
     flex-direction: column !important;
@@ -1768,49 +1668,46 @@ a {
     font-size: 14px !important;            
   }
 
-  /* Contact Page Header Banner Settings */
   .conpage-heading {
-    width: 100% !important;            /* Removes viewport calculations to prevent side-scrolling */
+    width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
   .conheading-content {
-    height: 180px !important;          /* Scales down banner frames for single-viewport windows */
-    margin-top: 20px !important;       /* Safely drops desktop fixed margin gaps */
+    height: 180px !important;
+    margin-top: 20px !important;     
   }
 
-  /* 🥞 FORCE CONTACT GRID COLS TO SINGLE VERTICAL LANES */
   .contact-layout-box {
-    flex-direction: column !important; /* Overrides desktop row rules to stack elements vertically */
-    align-items: center !important;    /* Centers layouts fluidly down phone view axes */
-    gap: 30px !important;              /* Provides elegant separation gaps between panels */
+    flex-direction: column !important; 
+    align-items: center !important; \
+    gap: 30px !important;             
     padding: 0 15px !important;
     width: 100% !important;
-    margin: 30px auto !important;      /* Halves the large 80px desktop separation margins */
+    margin: 30px auto !important;  
   }
 
-  /* Expand left text details column to full screen width */
   .contact-info-column {
     width: 100% !important;            
     max-width: 100% !important;
-    flex: none !important;             /* Cancels desktop fractional layout ratios */
-    text-align: center !important;     /* Centers text content cleanly for single-column tracking */
+    flex: none !important;           
+    text-align: center !important;     
     align-items: center !important;
   }
   .contact-info-column h2 {
-    font-size: 24px !important;        /* Scales title text down from 38px */
+    font-size: 24px !important; 
     line-height: 1.3 !important;       
   }
 
   /* Contact Card adjustments */
   .info-btn-card {
-    padding: 15px 18px !important;     /* Reduces desktop padding to open width space for labels */
-    gap: 12px !important;              /* Tightens down item gaps */
+    padding: 15px 18px !important;    
+    gap: 12px !important;
     justify-content: flex-start !important;
-    text-align: left !important;       /* Keeps text readable inside cards */
+    text-align: left !important;     
   }
   .info-btn-card strong {
-    font-size: 16px !important;        /* Prevents word-break conflicts */
+    font-size: 16px !important;    
   }
   .info-btn-card small {
     font-size: 13px !important;        
@@ -1819,43 +1716,38 @@ a {
     font-size: 28px !important;        
   }
 
-  /* Right-Side Form Wrapper Settings */
   .contact-form-column {
     width: 100% !important;            
     max-width: 100% !important;
     flex: none !important;             
-    padding: 22px 18px !important;     /* Maximizes screen writing zone */
+    padding: 22px 18px !important;    
     box-sizing: border-box !important; 
   }
   .contact-form-column .form-group {
     margin-bottom: 15px !important;    
   }
-
-  /* 🔘 FULL-WIDTH MOBILE SUBMIT COMPONENT UPGRADE */
   .contact-form-column .submit-btn {
-    width: 100% !important;            /* Forces button container block to span edge-to-edge */
+    width: 100% !important;          
     display: flex !important;
-    justify-content: center !important;/* Centers your form submit button label text precisely */
-    padding: 14px 20px !important;     /* Large, tap-friendly touch target layout */
+    justify-content: center !important;
+    padding: 14px 20px !important;   
     box-sizing: border-box !important;
     margin-top: 15px !important;
   }
 
-  /* 🗺️ RESPONSIVE EMBEDDED GOOGLE MAP */
   .google-map iframe {
-    width: 100% !important;            /* Fits map wrapper perfectly within phone display sides */
-    margin-left: 0 !important;         /* Removes layout-breaking desktop asymmetrical shifts */
+    width: 100% !important;           
+    margin-left: 0 !important;       
     margin-right: 0 !important;
-    height: 280px !important;          /* Shrinks the tall 520px height so touch scrolling isn't trapped */
+    height: 280px !important;
     margin-top: 25px !important;
     border-radius: 8px !important;
   }
 
-  /* ✉️ GLOBAL FOOTER CONTROL SYSTEM */
   .foot-container {
-    margin-top: 40px !important;       /* Minimizes excessive 130px whitespace separation void blocks */
-    padding: 30px 15px !important;     /* Restructures internal space padding values smoothly */
-    width: 100% !important;            /* Cleans up viewport full-width hacks */
+    margin-top: 40px !important;     
+    padding: 30px 15px !important;
+    width: 100% !important;         
     margin-left: 0 !important;
     margin-right: 0 !important;
     left: 0 !important;
@@ -1863,16 +1755,15 @@ a {
   }
 }
 
-/* 3. EXTRA SMALL MOBILE ADJUSTMENTS (Screens up to 480px wide) */
 @media (max-width: 480px) {
   .conheading-content {
-    height: 150px !important;          /* Extra layout compressions for tiny screen frames */
+    height: 150px !important;     
   }
   .contact-info-column h2 {
     font-size: 20px !important;        
   }
   .google-map iframe {
-    height: 230px !important;          /* Extra short map for small phone displays */
+    height: 230px !important;        
   }
 }
 .conpage-heading {
@@ -1918,7 +1809,6 @@ a {
   box-sizing: border-box !important;
 }
 
-/* Fixes the left side column text structure */
 .contact-info-column {
   flex: 1 !important;
   display: flex !important;
@@ -1983,7 +1873,6 @@ a {
     border-radius: 8px;
 }
 
-/* Fixes the right side form column wrapper */
 .contact-form-column {
   flex: 1.2 !important;
   width: 100% !important;
@@ -1994,7 +1883,6 @@ a {
   box-sizing: border-box !important;
 }
 
-/* Forces form items to stack vertically correctly */
 .contact-form-column .form-group {
   display: flex !important;
   flex-direction: column !important;
@@ -2003,7 +1891,6 @@ a {
   margin-bottom: 20px !important;
 }
 
-/* Forces labels to sit nicely above the boxes */
 .contact-form-column .form-group label {
   font-size: 14px !important;
   font-weight: 600 !important;
@@ -2013,7 +1900,6 @@ a {
   text-align: left !important;
 }
 
-/* Forces inputs to expand to 100% width smoothly */
 .contact-form-column .form-group input,
 .contact-form-column .form-group textarea {
   width: 100% !important;
@@ -2026,7 +1912,6 @@ a {
   background-color: #fafafa !important;
 }
 
-/* Styles the Submit button cleanly */
 .contact-form-column .submit-btn {
   width: auto !important;
   padding: 12px 30px !important;
